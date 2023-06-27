@@ -1,0 +1,36 @@
+Print the following pattern for the given number of rows.
+Pattern for N = 4
+4444444
+4333334
+4322234
+4321234
+4322234
+4333334  
+4444444
+Input format : N (Total no. of rows)
+
+Output format : Pattern in N lines
+
+Sample Input :
+3
+Sample Output :
+33333
+32223
+32123
+32223
+33333
+_____________________________________________________________________
+Solution for this task is
+def print_pattern(N):
+    size = 2 * N - 1
+
+    # Upper half of the pattern
+    for i in range(size):
+        row = []
+        for j in range(size):
+            row.append(str(N - min(i, j, size - i - 1, size - j - 1)))
+        print("".join(row))
+# Read input
+N = int(input())
+print_pattern(N)
+__________________________________________________________________________
